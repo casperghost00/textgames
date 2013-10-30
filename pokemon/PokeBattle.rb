@@ -24,6 +24,11 @@ class PokeBattle
     return result
   end
 
+  # The winner is based on the use of the rand() method
+  # and gives advantage in the roll to the team with the
+  # higher battle rating.  This advantage scales with the
+  # delta between the two ratings.  This delta may need
+  # to be weighted in the future to further balance odds.
   def find_winner
     t0 = @team_0_battle_rating
     t1 = @team_1_battle_rating
@@ -71,6 +76,10 @@ class PokeBattle
     return team_str
   end
 
+  # Battle Ratings are calculated by comparing the weaknesses
+  # of one team to the type composition of the other. It is an
+  # arbitrary number found by multiplying these "magnitudes"
+  # calculated in the PokeTeam class.
   def calculate_ratings
 
     @team_0.weaknesses.each do |def_type, def_mag|
@@ -87,8 +96,6 @@ class PokeBattle
         end
       end
     end
-
-
   end
 
 end
