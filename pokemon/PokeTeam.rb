@@ -2,6 +2,9 @@
 require "./PokeDex.rb"
 require "./PokeBattle.rb"
 
+# This is the "Party" that belongs to a trainer.
+# A PokeTeam can challenge other PokeTeams via the
+# #challenge method, which uses the PokeBattle construct.
 class PokeTeam
 
   attr_reader :trainer

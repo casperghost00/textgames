@@ -1,6 +1,7 @@
 
-
-
+# This class contains all the logic for printing out
+# the results of a battle between PokeTeams and 
+# determining a winner of said battle.
 class PokeBattle
 
   def initialize team0, team1

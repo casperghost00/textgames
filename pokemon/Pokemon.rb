@@ -1,4 +1,6 @@
 
+# A simple class for encapsulating individual Pokemon
+# logic.  Will likely be expanded upon at a later date.
 class Pokemon
 
   attr_reader :name

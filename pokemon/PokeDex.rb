@@ -2,6 +2,9 @@
 require 'json'
 require './Pokemon.rb'
 
+# This class is responsible for loading in
+# all of the Pokemon data from a json file and
+# making it available for other classes.
 class PokeDex
 
   def initialize
