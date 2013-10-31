@@ -39,7 +39,23 @@ class PokeTeam
     @pokemon.each do |poke|
       @base_stat_total += poke.base_total_stats
       poke.weaknesses.each do |type, magnitude|
-        @weaknesses[type] += Float(magnitude)
+        case Float(magnitude)
+        when 0
+          @weaknesses[type] += 0.2
+        when 0.25
+          @weaknesses[type] += 0.4
+        when 0.5
+          @weaknesses[type] += 0.8
+        when 1
+          @weaknesses[type] += 1.0
+        when 2
+          @weaknesses[type] += 1.2
+        when 4
+          @weaknesses[type] += 1.6
+        else
+          @weaknesses[type] += 1.0
+        end
+        #@weaknesses[type] += Float(magnitude)
       end
       poke.types.each do |type|
         @types[type.downcase] += 1/Float(poke.types.length) * poke.base_total_stats
